@@ -1,26 +1,21 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-databinding',
   imports: [
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './databinding.html',
   styleUrl: './databinding.css'
 })
 export class Databinding {
-  myName: string = 'Virat Kohli';
-  img_url: string = 'https://shorturl.at/Pit2d';
+  showParagraph: boolean = true;   // default visible
 
-  flag: boolean = false;
-
-  addToCart() {
-    alert('Your Item is adde to Cart!!!');
-  }
-
-  hide() {
-    document.getElementById("hide").style.display = "none";
-
+  toggleParagraph(): void {
+    this.showParagraph = !this.showParagraph;
   }
 }

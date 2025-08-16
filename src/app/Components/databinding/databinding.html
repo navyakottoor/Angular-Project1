@@ -1,42 +1,17 @@
 
-<h3 class="text-center">Let's Learn DataBinding</h3>
-
-<div class="border border-3 rounded-3 p-2 m-2">
-  <div>My Name is: {{myName}}</div>
-  <div>My Name is: <span [innerText]="myName"></span></div>
-  <div>My Name is: <span bind-innerText="myName"></span></div>
-
-  <img src="{{img_url}}" width="300" height="300" class="mx-1" />
-  <img [src]="img_url" width="300" height="300" class="mx-1" />
-  <img bind-src="img_url" width="300" height="300" class="mx-1 my-2" />
-
-  <div>
-    <input placeholder="Enter something..." value="mobile" />
-    1 way: <input value={{myName}} class="mx-2" />
-    1 way: <input [value]=myName class="mx-2" />
-    1 way:<input bind-value=myName class="mx-2" />
-    2 way:<input [(ngModel)]="myName" class="mx-2" />
-  </div>
-
-  <div>Interpolation VS property Binding</div>
-  <button class="btn btn-primary" (click)="addToCart()">Add To Cart</button>
-  <button class="btn btn-primary mx-2" on-click="addToCart()">Add To Cart</button>
-  <!-- <button class="btn btn-primary mx-2" disabled>Add To Cart</button> -->
-  <button class="btn btn-primary mx-2" disabled={{flag}}>Add To Cart</button>
-  <button class="btn btn-primary mx-2" [disabled]=flag>Add To Cart</button>
-  <button class="btn btn-primary mx-2" bind-disabled=flag>Add To Cart</button>
-</div>
-
-
-<div class="border border-3 rounded-3 p-2 m-2">
-  <div>1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
-  </div>
-  <h1 id = "hide">Helloooooooooooooooooooooooo</h1>
-  <button class="btn btn-primary" (click)="hide()">SHOW/HIDE</button>
-</div>
-
-<div class="border border-3 rounded-3 p-2 m-2">
-  <div>2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</div>
-  <textarea maxlength="100"></textarea>
-  <div>Remaining Chars: 100</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    @if (showParagraph) {
+  <p>This is a paragraph that can be shown or hidden.</p>
+}
+<button (click)="toggleParagraph()">
+  {{ showParagraph ? 'Hide' : 'Show' }} Paragraph
+</button>  
+</body>
+</html>

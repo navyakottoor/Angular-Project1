@@ -10,10 +10,10 @@ import { Navbar } from './Components/navbar/navbar';
   selector: 'app-root',
   imports: [
     Navbar,
-    Categories,
+    // Categories,
     Footer,
     Body,
-    Carousel
+    // Carousel
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
