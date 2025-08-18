@@ -7,11 +7,34 @@
   <title>Document</title>
 </head>
 <body>
-    @if (showParagraph) {
-  <p>This is a paragraph that can be shown or hidden.</p>
-}
-<button (click)="toggleParagraph()">
-  {{ showParagraph ? 'Hide' : 'Show' }} Paragraph
-</button>  
+  <h5>Assignment 1: Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph</h5>
+  <p [hidden]="flag">This is a pharagraph</p>
+  <button (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
+  <h5>Assignment 2: Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</h5>
+  <input [(ngModel)]="message">
+  <p>Remaining chars are {{limit-(message.length)}}</p>
+  <h5>Assignment 3: Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a div</h5>
+  <select [(ngModel)]="option">
+    <option>Telangana</option>
+    <option>AndhraPradesh</option>
+    <option>Karnataka</option>
+    <option>TamilNadu</option>
+    <option>Kerala</option>
+  </select>
+  <p>Selected State is {{option}}</p>
+  <h5>Assignment 4: Have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations</h5>
+  <input type="number" [(ngModel)]="num1">
+  <input type="number" [(ngModel)]="num2">
+  <select [(ngModel)]="selectOpertation">
+    <option>+</option>
+    <option>-</option>
+    <option>Division</option>
+    <option>*</option>
+  </select>
+  <button (click)="operation()">{{(selectOpertation == "+")  ? 'Add' : ((selectOpertation == "/") ? 'Division' : ((selectOpertation == "-") ? 'Substraction' : ((selectOpertation == "*") ? 'Multiflication' : "Select Option")))}}</button>
+  <p>The result is {{res}}</p>
+  <h5>Assignment 5: create a input box, toggle the type of that input box to (text/password)</h5>
+  <input type="{{flag2 ? 'text' : 'password'}}">
+  <button (click)="flag2=!flag2">{{flag2 ? "Hide" : "Show Password"}}</button>
 </body>
 </html>

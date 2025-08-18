@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h6>Assignment: Display Table using Angular @ for</h6>
+    <div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>sal</th>
+                    <th>gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(emp of employees;track $index){
+                <tr>
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <h6>Assignment: Declare an array of users, display users in card & table format.
+        add a button/switch to toggle between table view and card view.</h6>
+    <!-- <div class="card">
+                    @for (emp of employees1; track $index) { 
+                        <img src="staffing (2).png" alt="Avatar" style="width: 9rem;">
+                    <div class="card-body">
+                            <h4><b>zcx</b></h4>
+                            <p>dcczz</p>
+                        </div>
+                     } 
+                    </div> -->
+    <div class="card-group">
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="card-group">
+        <div class="card">
+            @for (emp of employees1; track $index) {
+            <img src="ProfilePic.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{emp.id}}</p>
+                <p class="card-text">{{emp.name}}</p>
+                <p class="card-text">{{emp.role}}</p>
+                <p class="card-text">{{emp.salary}}</p>
+                <p class="card-text">{{emp.status}}</p>
+            </div>
+            }
+        </div>
+    </div> -->
+    @for (emp of employees1; track $index) {
+    <!-- <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0"> -->
+            <div class="card" style="float: left; margin: 10px;">
+                <img src={{emp.img}} class="card-img-top" alt="..." style="width: 200px; height: 300px;">
+                <div class="card-body">
+                    <p class="card-text">Employee Id: {{emp.id}}</p>
+                    <p class="card-text">Employee Name: {{emp.name}}</p>
+                    <p class="card-text">Employee Role: {{emp.role}}</p>
+                    <p class="card-text">Employee Salary: {{emp.salary}}</p>
+                    <p class="card-text">Employee Status: {{emp.status}}</p>
+                </div>
+            </div>
+        <!-- </div>
+    </div> -->
+}
+</body>
+
+</html>

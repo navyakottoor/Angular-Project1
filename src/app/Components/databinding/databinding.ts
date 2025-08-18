@@ -13,9 +13,36 @@ import { CommonModule } from '@angular/common';
   styleUrl: './databinding.css'
 })
 export class Databinding {
-  showParagraph: boolean = true;   // default visible
+  flag: boolean = false;
+  flag2: boolean = false;
+  limit: number = 100;
+  message: String = '';
+  option: String = '';
+  num1: number = 0;
+  num2: number = 0;
+  ption: string = "";
+  res: number = 0;
 
-  toggleParagraph(): void {
-    this.showParagraph = !this.showParagraph;
+  selectOpertation: string = "";
+  operation(){
+    if(this.selectOpertation!=""){
+      switch(this.selectOpertation){
+        case "+":
+          this.res = +this.num1 + +this.num2
+          break
+        case "-":
+          this.res = this.num1 - this.num2
+          break
+        case "*":
+          this.res = this.num1 * this.num2
+          break
+        case "/":
+          this.res = this.num1 / this.num2
+          break
+        default:
+          this.res = 0
+          break
+    }
   }
+}
 }
