@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Directives</title>
 </head>
 
 <body>
-    <h6>Assignment: Display Table using Angular @ for</h6>
+    <h6>Day1: Assignment: Display Table using Angular @ for</h6>
     <div>
         <table class="table table-bordered table-striped">
             <thead>
@@ -30,59 +30,180 @@
                 }
             </tbody>
         </table>
+        <h6>Assignment: Declare an array of users, display users in card & table format.
+            add a button/switch to toggle between table view and card view.</h6>
+
+        <button class="btn btn-primary" (click)="flag = !flag">{{flag ? 'Show Card View' : 'Show Table View'}}</button>
     </div>
-    <h6>Assignment: Declare an array of users, display users in card & table format.
-        add a button/switch to toggle between table view and card view.</h6>
-    <!-- <div class="card">
-                    @for (emp of employees1; track $index) { 
-                        <img src="staffing (2).png" alt="Avatar" style="width: 9rem;">
-                    <div class="card-body">
-                            <h4><b>zcx</b></h4>
-                            <p>dcczz</p>
-                        </div>
-                     } 
-                    </div> -->
-    <div class="card-group">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="card-group">
-        <div class="card">
-            @for (emp of employees1; track $index) {
-            <img src="ProfilePic.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">{{emp.id}}</p>
-                <p class="card-text">{{emp.name}}</p>
-                <p class="card-text">{{emp.role}}</p>
-                <p class="card-text">{{emp.salary}}</p>
-                <p class="card-text">{{emp.status}}</p>
-            </div>
-            }
-        </div>
-    </div> -->
-    @for (emp of employees1; track $index) {
-    <!-- <div class="row">
+    <div>
+        @for (emp of employees1; track $index) {
+        <!-- <div class="row">
         <div class="col-sm-6 mb-3 mb-sm-0"> -->
-            <div class="card" style="float: left; margin: 10px;">
-                <img src={{emp.img}} class="card-img-top" alt="..." style="width: 200px; height: 300px;">
-                <div class="card-body">
-                    <p class="card-text">Employee Id: {{emp.id}}</p>
-                    <p class="card-text">Employee Name: {{emp.name}}</p>
-                    <p class="card-text">Employee Role: {{emp.role}}</p>
-                    <p class="card-text">Employee Salary: {{emp.salary}}</p>
-                    <p class="card-text">Employee Status: {{emp.status}}</p>
-                </div>
+        <div class="card" style="float: left; margin: 10px;" [hidden]="flag">
+            <img src={{emp.img}} class="card-img-top" alt="..." style="width: 260px; height: 310px;">
+            <div class="card-body">
+                <p class="card-text">Employee Id: {{emp.id}}</p>
+                <p class="card-text">Employee Name: {{emp.name}}</p>
+                <p class="card-text">Employee Role: {{emp.role}}</p>
+                <p class="card-text">Employee Salary: {{emp.salary}}</p>
+                <p class="card-text">Employee Status: {{emp.status}}</p>
             </div>
+        </div>
         <!-- </div>
     </div> -->
-}
-</body>
+        }
+    </div>
 
+    <div>
+        <table class="table" [hidden]="!flag">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>role</th>
+                    <th>salary</th>
+                    <th>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(emp of employees1;track $index) {
+                <tr>
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.role}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.status}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h5 style="clear: both;"> a. Display Salary in green if salary > 50000, else red text using [ngStyle]</h5>
+        <table class="table table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Salary</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(emp of employees1;track $index) {
+                <tr>
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.role}}</td>
+                    <td [ngStyle]="(emp.salary > 50000) ? salStyle : salStyle1">{{emp.salary}}</td>
+                    <td [ngClass]="(emp.status == 'Inactive') ? 'disabled' : 'enabled'">{{emp.status}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <h5> b. Apply a CSS class "inactive" to employees whose status is "Inactive" using [ngClass]</h5>
+    <table class="table table table-bordered">
+        <thead>
+            <tr>
+                <th #dsfsdf>Id</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees1;track $index) {
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.role}}</td>
+                <td [ngStyle]="(emp.salary > 50000) ? salStyle : salStyle1">{{emp.salary}}</td>
+                <td><button class="btn"
+                        [ngClass]="(emp.status == 'Inactive') ? 'disabled' : 'enabled'">{{emp.status}}</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <p> c. Add bold font and blue color only for employees whose role is "Manager" using [ngClass]</p>
+    <table class="table table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees1;track $index) {
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td [ngClass]="(emp.role === 'Manager') ? 'fw-bold text-primary' : ''">{{emp.role}}</td>
+                <td>{{emp.salary}}</td>
+                <td><button class="btn">{{emp.status}}</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <p> d. Apply a different row background color based on employee role:
+        Manager = lightyellow , Developer = lightblue , Tester = lightpink</p>
+    <table class="table table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees1;track $index) {
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td [ngClass]="getButtonClass(emp.role)">{{emp.role}}</td>
+                <td>{{emp.salary}}</td>
+                <td><button class="btn">{{emp.status}}</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <p>e.Show salary in a badge style with dynamic color
+        Green if salary > 70,000 , Orange if between 40,000–70,000, Red if < 40,000</p>
+            <table class="table table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Salary</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(emp of employees1;track $index) {
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.role}}</td>
+                        <td><span [ngClass]="badgeStyle(emp.salary)">{{emp.salary}}</span></td>
+                        <td>{{emp.status}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+
+            <!-- <q-badge
+                :color="props.row.type == 'boss' ? 'red-10' : props.row.type == 'player' ? 'green-10' : 'black'"
+                :style="props.row.hp == 0 ? 'text-decoration: line-through' : ''"
+            >
+                {{ props.value }}
+            </q-badge> -->
+</body>
 </html>
