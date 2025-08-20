@@ -1,0 +1,33 @@
+<h3 class="text-center">Cards, Font_Awesome, Pagination, Search, Sort</h3>
+<div>
+<input  class="form-control" #search type="search" placeholder="Start searching for title" aria-label="Search">
+<button (click)="searchWord(search.value)">Search</button>
+</div>
+
+<div>
+<button (click)="sortByPrice()">Price Low-High</button>
+</div>
+
+<!-- <input class="form-control" type="text" name="search" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country"> -->
+<div class="container">
+    <div class="row">
+        @for(product of productListResult | paginate: {itemsPerPage: 4, currentPage: p};track $index) {
+        <div class="col-sm-3">
+            <div class="card">
+                <img src={{product.image}} class="card-img-top" alt="..."> 
+                <div class="card-body">
+                    <p class="card-title">{{product.id}}</p>
+                    <h6 class="card-text" [ngStyle]="style">{{product.title}}</h6>
+                    <p class="card-text" [ngStyle]="style1"><fa-icon [icon]="faDollarSign"></fa-icon>{{product.price}}</p>
+                    <!-- <p class="card-text"><i class="fas fa-dollar-sign">{{product.price | currency:'USD':'symbol'}}</i></p> -->
+                    <p class="card-text text-truncate">{{product.description}}</p>
+                    <p class="card-text"><fa-icon [icon]="faShirt"></fa-icon>{{product.category}}</p>
+                    <p class="card-text" [ngStyle]="style1">{{product.rating.rate}}<fa-icon [icon]="faStar"></fa-icon></p>
+                    <p class="card-text" [ngStyle]="style1">{{product.rating.count}}</p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
