@@ -3,7 +3,7 @@ import { MyModal } from '../my-modal/my-modal';
 
 @Component({
   selector: 'app-footer',
-  imports: [MyModal],
+  imports: [],
   templateUrl: './footer.html',
   styleUrl: './footer.css'
 })
