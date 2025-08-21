@@ -1,4 +1,5 @@
 <div>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEmployeeModal"><fa-icon [icon]="faEdit"></fa-icon> Add</button>
     <table class="table  table-striped">
         <thead>
             <tr>
@@ -20,15 +21,14 @@
                 <td>{{emp.department}}</td>
                 <td><fa-icon [icon]="faDollar"></fa-icon>{{emp.salary}}</td>
                 <td>{{emp.email}}</td>
-                <td><button (click)="confirmAndDelete($index)" class="btn-danger"><fa-icon [icon]="faTrash" class="red"></fa-icon> Delete</button></td>
-                <td><button data-bs-toggle="modal" data-bs-target="#viewEmpployeeModal" (click)="viewEmployee(emp.id)" class="btn-info"><fa-icon [icon]="faEye"></fa-icon> View</button></td>
+                <td><button (click)="confirmAndDelete($index)" class="btn btn-danger"><fa-icon [icon]="faTrash" class="red"></fa-icon> Delete</button></td>
+                <td><button data-bs-toggle="modal" data-bs-target="#viewEmpployeeModal" (click)="viewEmployee(emp.id)" class="btn btn-info"><fa-icon [icon]="faEye"></fa-icon> View</button></td>
             </tr>
         }
     </tbody>
 </table>
 </div>
 
-<button class="btn-secondary" data-bs-toggle="modal" data-bs-target="#addEmployeeModal"><fa-icon [icon]="faEdit"></fa-icon> Add</button>
 
 <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" [hidden]="false">
   Open Modal
@@ -59,7 +59,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Add Employee Details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <p>Name:</p><input type="text"  name="name" [(ngModel)]="employee.name">
@@ -67,8 +67,9 @@
         <p>Department:</p><input type="text"  name="department" [(ngModel)]="employee.department">
         <p>Salary:</p><input type="number"  name="salary" [(ngModel)]="employee.salary">
         <p>Email:</p><input type="text"  name="email" [(ngModel)]="employee.email">
-        <button (click)="saveEmployee()">Save</button>
-      </div>
+        <div>
+        <button class="btn btn-success" (click)="saveEmployee()">Save</button>
+        </div>
     </div>
   </div>
 </div>
