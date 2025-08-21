@@ -87,4 +87,5 @@ export class EmployeeCRUD {
       { position: 'top-center', theme: 'light', timeout: 5000, actionText: 'X' }
     );
   }
+  
 }
