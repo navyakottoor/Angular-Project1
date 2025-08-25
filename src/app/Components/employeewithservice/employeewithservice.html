@@ -1,0 +1,36 @@
+<div>
+    <label>Filter Employees :</label>
+  <select id="Filter Employees" [(ngModel)]="selectedOption" (change)="filteredEmpData(selectedOption)">
+    <option value="all" selected>All</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+</div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Designation</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(emp of filteredArrayOfEmp;track $index) {
+      <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.department}}</td>
+        <td>{{emp.designation}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.email}}</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>

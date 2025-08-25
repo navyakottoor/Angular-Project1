@@ -7,6 +7,10 @@ import { EmployeeList } from '../employee-list/employee-list';
 import { ProductList } from '../product-list/product-list';
 import { Demo1 } from '../demo1/demo1';
 import { EmployeeCRUD } from '../employee-crud/employee-crud';
+import { OrdinalCustomepipe } from "../ordinal-customepipe/ordinal-customepipe";
+import { EmployeeCURD } from "../employee-curd/employee-curd";
+import { Employeewithservice } from "../employeewithservice/employeewithservice";
+import { HttpDemo1 } from "../http-demo1/http-demo1";
 
 @Component({
   selector: 'app-body',
@@ -18,8 +22,12 @@ import { EmployeeCRUD } from '../employee-crud/employee-crud';
     // EmployeeList,
     // ProductList,
     // Demo1,
-    EmployeeCRUD,
-  ],
+    // EmployeeCRUD,
+    // OrdinalCustomepipe,
+    // EmployeeCURD,
+    Employeewithservice,
+    // HttpDemo1
+],
   templateUrl: './body.html',
   styleUrl: './body.css',
 })

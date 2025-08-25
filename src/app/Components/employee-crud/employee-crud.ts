@@ -58,7 +58,7 @@ export class EmployeeCRUD {
 
   confirmAndDelete(val: any) {
     Swal.fire({
-      title: 'Do you want Delete Employee',
+      title: 'Are you sure? Do you want Delete Employee',
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -66,7 +66,7 @@ export class EmployeeCRUD {
     }).then((result) => {
       if (result.isConfirmed) {
         this.employeeArray.splice(val,1);
-        Swal.fire('Saved!', '', 'success');
+        Swal.fire('Deleted!', '', 'success');
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info');
       }
@@ -82,10 +82,10 @@ export class EmployeeCRUD {
 
   saveEmployee() {
     this.employeeArray.push({id: (this.employeeArray.length)+1, name: this.employee.name, designation: this.employee.designation, department: this.employee.department, salary: this.employee.salary, email: this.employee.email});
-    this.employee = {}; // reset form after adding
+    this.employee = {};
     new Snackbar('EmployAdded Successfully',
       { position: 'top-center', theme: 'light', timeout: 5000, actionText: 'X' }
     );
   }
-  
+
 }

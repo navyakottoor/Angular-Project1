@@ -1,0 +1,27 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Designation</td>
+                <td>Department</td>
+                <td>State</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody>
+            @for(empObj of empArr;track $index) {
+            <tr>
+                <td>{{empObj.id}}</td>
+                <td>{{empObj.name}}</td>
+                <td>{{empObj.designation}}</td>
+                <td>{{empObj.department}}</td>
+                <td>{{empObj.salary}}</td>
+                <td>{{empObj.email}}</td>
+                <td><button (click)="emitDeleteEmployeeEvent($index)"><fa-icon [icon]="faTrash"></fa-icon> Delete</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
