@@ -13,11 +13,12 @@ export class Employeewithservice {
   constructor(private empServiceObj: Employee) {
     this.filteredArrayOfEmp = this.empServiceObj.employeeArray;
   }
-  
+
   selectedOption: any = '';
 
   filteredEmpData(filter: any) {
     this.filteredArrayOfEmp = this.empServiceObj.getFilteredEmployees(filter);
   }
+  
   
 }
