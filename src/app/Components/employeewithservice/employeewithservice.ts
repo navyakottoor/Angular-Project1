@@ -17,8 +17,9 @@ export class Employeewithservice {
   selectedOption: any = '';
 
   filteredEmpData(filter: any) {
-    this.filteredArrayOfEmp = this.empServiceObj.getFilteredEmployees(filter);
+    this.filteredArrayOfEmp 
+    = this.empServiceObj.getFilteredEmployees(filter);
   }
-  
+
   
 }
