@@ -11,6 +11,7 @@ import { OrdinalCustomepipe } from "../ordinal-customepipe/ordinal-customepipe";
 import { EmployeeCURD } from "../employee-curd/employee-curd";
 import { Employeewithservice } from "../employeewithservice/employeewithservice";
 import { HttpDemo1 } from "../http-demo1/http-demo1";
+import { EmployeeCRUDHttpClient } from "../employee-crud-http-client/employee-crud-http-client";
 
 @Component({
   selector: 'app-body',
@@ -26,7 +27,7 @@ import { HttpDemo1 } from "../http-demo1/http-demo1";
     // OrdinalCustomepipe,
     // EmployeeCURD,
     Employeewithservice,
-    // HttpDemo1
+    EmployeeCRUDHttpClient
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

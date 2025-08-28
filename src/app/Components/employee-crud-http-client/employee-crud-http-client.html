@@ -1,0 +1,68 @@
+<table class="table tablestripped table boardered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of retrivedEmpData;track $index) {
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.username}}</td>
+            <td>{{emp.email}}</td>
+            <td><button (click)="deleteEmployee(emp.id)" class="btn btn-danger"><fa-icon [icon]="faTrash"></fa-icon> Delete</button></td>
+            <!-- <td><button (click)="updateEmployeeData(emp.id)" class="btn btn-danger"><fa-icon [icon]="faPencil"></fa-icon> Update</button></td> -->
+            <td><button (click)="prepareEdit(emp)" class="btn btn-danger"><fa-icon [icon]="faTrash"></fa-icon> Replace</button></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <form #userForm="ngForm" (ngSubmit)="postNewUserToDB(userForm)">
+        <div>
+        <label>Name : </label>
+        <input type="text" [(ngModel)]="empAddBody.name">
+        </div>
+        <div>
+        <label>User Name :</label>
+        <input type="text" [(ngModel)]="empAddBody.username">
+        </div>
+        <div>
+        <label>Email :</label>
+        <input type="text" [(ngModel)]="empAddBody.email">
+        </div>      
+        <button type="submit">Submit</button>  
+    </form>
+</div>
+
+
+<!-- Edit Employee Form -->
+  <div class="mt-4" *ngIf="editEmpBody">
+    <h4>Edit Employee</h4>
+    <form #editForm="ngForm" (ngSubmit)="updateToNewEmployee(editForm)">
+      <div class="mb-3">
+        <label class="form-label">Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="editEmpBody!.name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">User Name:</label>
+        <input type="text" d="form-control" [(ngModel)]="editEmpBody!.username" name="username" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email:</label>
+        <input type="email" class="form-control" [(ngModel)]="editEmpBody!.email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-warning">Update Employee</button>
+      <!-- <button type="button" class="btn btn-secondary ms-2" (click)="cancelEdit()">Cancel</button> -->
+    </form>
+  </div>
+
+<!-- <div class="mb-3">
+      <label for="name" class="form-label">Name : </label>
+      <input  type="text" name="name" [(ngModel)]="employee.name" placeholder="Enter employee name" required >
+    </div> -->
