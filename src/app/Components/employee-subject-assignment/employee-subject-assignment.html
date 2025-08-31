@@ -1,0 +1,77 @@
+<!-- <div>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEmployeeModal"><fa-icon [icon]="faEdit"></fa-icon> Add</button>
+    <table class="table  table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Email</th>
+                <th>icon</th> 
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employeeArray;track $index) {
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.designation}}</td>
+                <td>{{emp.department}}</td>
+                <td><fa-icon [icon]="faDollar"></fa-icon>{{emp.salary}}</td>
+                <td>{{emp.email}}</td>
+                <td><button (click)="confirmAndDelete($index)" class="btn btn-danger"><fa-icon [icon]="faTrash" class="red"></fa-icon> Delete</button></td>
+                <td><button data-bs-toggle="modal" data-bs-target="#viewEmpployeeModal" (click)="viewEmployee(emp.id)" class="btn btn-info"><fa-icon [icon]="faEye"></fa-icon> View</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+
+ <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" [hidden]="false">
+  Open Modal
+</button
+
+<div class="modal fade" id="viewEmpployeeModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Id: {{res?.id}}</p>
+        <p>Name: {{res?.name}}</p>
+        <p>Designation: {{res?.designation}}</p>
+        <p>Department: {{res?.department}}</p>
+        <p>Salary: {{res?.salary}}</p>
+        <p>Email: {{res?.email}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="addEmployeeModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Employee Details</h5>
+        <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Name:</p><input type="text"  name="name" [(ngModel)]="employee.name">
+        <p>Designation:</p><input type="text"  name="designation" [(ngModel)]="employee.designation">
+        <p>Department:</p><input type="text"  name="department" [(ngModel)]="employee.department">
+        <p>Salary:</p><input type="number"  name="salary" [(ngModel)]="employee.salary">
+        <p>Email:</p><input type="text"  name="email" [(ngModel)]="employee.email">
+        <div>
+        <button class="btn btn-success" (click)="saveEmployee()">Save</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+ -->

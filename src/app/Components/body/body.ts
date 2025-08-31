@@ -12,6 +12,9 @@ import { EmployeeCURD } from "../employee-curd/employee-curd";
 import { Employeewithservice } from "../employeewithservice/employeewithservice";
 import { HttpDemo1 } from "../http-demo1/http-demo1";
 import { EmployeeCRUDHttpClient } from "../employee-crud-http-client/employee-crud-http-client";
+import { EmployeeSubjectAssignment } from "../employee-subject-assignment/employee-subject-assignment";
+import { ToDoListSignal } from "../to-do-list-signal/to-do-list-signal";
+import { TemplateDrivenForm } from "../template-driven-form/template-driven-form";
 
 @Component({
   selector: 'app-body',
@@ -27,7 +30,11 @@ import { EmployeeCRUDHttpClient } from "../employee-crud-http-client/employee-cr
     // OrdinalCustomepipe,
     // EmployeeCURD,
     Employeewithservice,
-    EmployeeCRUDHttpClient
+    EmployeeCRUDHttpClient,
+    // SignalDemo,
+    EmployeeSubjectAssignment,
+    ToDoListSignal,
+    TemplateDrivenForm
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

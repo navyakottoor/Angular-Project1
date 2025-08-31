@@ -1,0 +1,43 @@
+<div>
+    <form #myForm="ngForm" (submit)="submitMyForm(myForm.value)">
+        <p>
+            First Name:
+            <input name="firstname" #fName="ngModel" ngModel required minlength="5">
+            @if(fName.dirty && fName.hasError('required')) {
+                <span class="text-danger">Firstname is Required</span>
+            }
+        </p>
+
+        <p>
+            Last Name:
+            <input name="lastname" ngModel>
+        </p>
+
+        
+        <p>
+            Email:
+            <input name="email" ngModel>
+        </p>
+
+        <div ngModelGroup="address">
+            <p>
+                City:
+                <input name="city" ngModel>
+            </p>
+            <p>
+                state:
+                <input name="state" ngModel>
+            </p>
+            <p>
+                Pincode:
+                <input name="pincode" ngModel>
+            </p>
+        </div>
+
+        <input type="reset" value="Reset" >
+        <input type="submit" value="Submit" > <!-- [disabled]="myForm.invalid" -->
+>    </form>
+    <pre>
+        {{myForm.value | json}}
+    </pre>
+</div>

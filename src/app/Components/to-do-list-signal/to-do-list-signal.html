@@ -1,0 +1,25 @@
+<h2>Todo List</h2>
+
+<p>Id</p> 
+<input type="text" [(ngModel)]="newItem.id">
+<p>Title</p>
+<input type="text" [(ngModel)]="newItem.title">
+<p>Done</p>
+<input type="text" [(ngModel)]="newItem.done">
+<button (click)="addToDoItem(newItem.id,newItem.title,newItem.done)">Add an Item</button>
+
+<button (click)="toggleCompletedFlag()">
+  Is Completed  (Now: {{ isCompletedFlag() }})
+</button>
+
+<p>Completed: {{ completedToDo() }}</p>
+<p>Remaining: {{ remainingToDo() }}</p>
+
+<ul>
+  <li *ngFor="let todo of todos()">
+    <span [style.text-decoration]="todo.done ? 'line-through' : 'none'">
+      {{ todo.title }}
+    </span>
+    <button (click)="todo.done = !todo.done">Toggle Todo</button>
+  </li>
+</ul>
