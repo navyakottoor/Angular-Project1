@@ -15,6 +15,7 @@ import { EmployeeCRUDHttpClient } from "../employee-crud-http-client/employee-cr
 import { EmployeeSubjectAssignment } from "../employee-subject-assignment/employee-subject-assignment";
 import { ToDoListSignal } from "../to-do-list-signal/to-do-list-signal";
 import { TemplateDrivenForm } from "../template-driven-form/template-driven-form";
+import { ReactiveForm } from '../reactive-form/reactive-form';
 
 @Component({
   selector: 'app-body',
@@ -34,7 +35,8 @@ import { TemplateDrivenForm } from "../template-driven-form/template-driven-form
     // SignalDemo,
     EmployeeSubjectAssignment,
     ToDoListSignal,
-    TemplateDrivenForm
+    TemplateDrivenForm, 
+    ReactiveForm
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',
