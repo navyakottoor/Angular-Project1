@@ -16,6 +16,8 @@ import { EmployeeSubjectAssignment } from "../employee-subject-assignment/employ
 import { ToDoListSignal } from "../to-do-list-signal/to-do-list-signal";
 import { TemplateDrivenForm } from "../template-driven-form/template-driven-form";
 import { ReactiveForm } from '../reactive-form/reactive-form';
+import { RegistrationForm } from "../registration-form/registration-form";
+import { RouterOutlet } from "../../../../node_modules/@angular/router/router_module.d";
 
 @Component({
   selector: 'app-body',
@@ -35,8 +37,10 @@ import { ReactiveForm } from '../reactive-form/reactive-form';
     // SignalDemo,
     EmployeeSubjectAssignment,
     ToDoListSignal,
-    TemplateDrivenForm, 
-    ReactiveForm
+    TemplateDrivenForm,
+    ReactiveForm,
+    RegistrationForm,
+    RouterOutlet
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

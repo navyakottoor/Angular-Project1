@@ -1,1 +1,78 @@
-<p>registration-form works!</p>
+<h3 class="text-center">Let's Learn Model Driven Form</h3>
+<!-- (inputbox,radio,checkbox,dropdown,textarea) -->
+<div class="border border-3 rounded-3 p-3 col-sm-6 offset-3">
+  <form [formGroup]="registrationForm" (submit)="submitMyForm(registrationForm)">
+    <p>
+      First Name:
+      <input formControlName="firstName" />
+      @if(registrationForm.controls.firstName.hasError('required')){
+        <span class="text-danger">FirstName is required</span>
+      }
+      @if(registrationForm.controls.firstName.hasError('minlength')){
+        <span class="text-danger">FirstName should have 3 chars </span>
+      }
+    </p>
+    <p>
+      Middle Name:
+      <input formControlName="middleName" />
+    </p>
+    <p>
+      Last Name:
+      <input formControlName="lastName" />
+    </p>
+    <div>
+        <p>Gender</p>
+        <div>
+            Male:
+            <input formControlName="gender" type="radio" value="male" />
+            Fe-Male:
+            <input formControlName="gender" type="radio" value="female" />
+        </div>
+    </div>
+    <p>
+      Email:
+      <input formControlName="email" />
+    </p>
+    <div formGroupName="address">
+      <p>
+        City:
+        <input formControlName="city" />
+      </p>
+      <p>
+        State:
+        <input formControlName="state" />
+      </p>
+    </div>
+    <div>
+    Country:
+    <select formControlName="country">
+      <option value="country">Select Country</option>
+      @for(country of countries;track $index) {
+          <option>{{country}}</option>
+      }
+    </select>
+  </div>
+  <p>
+        Pincode:
+        <input formControlName="pincode" />
+      </p>
+  <div>
+    Enter Comments:
+    <textarea formControlName="comments" ></textarea>
+  </div>
+  <div>
+  <h1></h1>  
+  </div>
+  <div>
+    <p>Accept the provided details are true to your knowledge:</p>
+  <input type="checkbox" formControlName="concent" />
+  I accept the information provided is true to my knowledge.
+  </div>
+
+    <input type="reset" value="Reset" class="mx-2" (click)="registrationForm.reset()"/>
+    <input type="submit" value="Submit" [disabled]="registrationForm.invalid" />
+  </form>
+  <!-- <pre>
+    {{registrationForm.value | json}}
+  </pre> -->
+</div>
