@@ -17,7 +17,8 @@ import { ToDoListSignal } from "../to-do-list-signal/to-do-list-signal";
 import { TemplateDrivenForm } from "../template-driven-form/template-driven-form";
 import { ReactiveForm } from '../reactive-form/reactive-form';
 import { RegistrationForm } from "../registration-form/registration-form";
-import { RouterOutlet } from "../../../../node_modules/@angular/router/router_module.d";
+import { FileExplorerStructure } from "../file-explorer-structure/file-explorer-structure";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -40,7 +41,9 @@ import { RouterOutlet } from "../../../../node_modules/@angular/router/router_mo
     TemplateDrivenForm,
     ReactiveForm,
     RegistrationForm,
-    RouterOutlet
+    RouterOutlet,
+    FileExplorerStructure,
+    UserList
 ],
   templateUrl: './body.html',
   styleUrl: './body.css',

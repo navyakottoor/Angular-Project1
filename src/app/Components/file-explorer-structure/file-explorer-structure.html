@@ -1,0 +1,8 @@
+<h2>File Explorer</h2>
+<ul>
+    @for (file of files; track $index) {
+  <li>
+    <app-folder [file]="file"></app-folder>
+  </li>
+}
+</ul>
