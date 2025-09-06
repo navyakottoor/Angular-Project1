@@ -9,5 +9,5 @@ import { RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.css'
 })
 export class Navbar {
-
+  userRole: String = 'trainer';
 }
